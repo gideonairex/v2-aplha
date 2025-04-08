@@ -1,6 +1,14 @@
 {
   "extends": ["../../biome.json"],
   "files": {
-    "ignore": ["dist/", "node_modules/", "coverage/"]
+    "ignore": [
+      "dist/",
+      "node_modules/",
+      "coverage/",
+      "prisma/migrations",
+      "prisma/seeders/",
+      "prisma/schema/generated/",
+      "prisma/seed.mjs"
+    ]
   }
 }

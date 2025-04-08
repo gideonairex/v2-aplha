@@ -1,7 +1,7 @@
 {
   "extends": "../../packages/typescript-config/base.json",
-  "include": ["./"],
-  "exclude": ["node_modules", "**/*.test.ts"],
+  "include": ["src/**/*.ts", "environment.d.ts", "test/**/*.ts"],
+  "exclude": ["node_modules", "dist", "coverage"],
   "compilerOptions": {
     "outDir": "./dist",
     "module": "node16",
