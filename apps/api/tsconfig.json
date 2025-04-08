@@ -1,13 +1,31 @@
 {
+  "extends": "../../packages/typescript-config/base.json",
+  "include": ["./"],
+  "exclude": ["node_modules", "**/*.test.ts"],
   "compilerOptions": {
+    "outDir": "./dist",
+    "module": "node16",
+    "declaration": false,
+    "declarationMap": false,
+    "moduleResolution": "node16",
     "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
     "strict": true,
+    "strictNullChecks": true,
     "skipLibCheck": true,
-    "outDir": "dist"
+    "types": ["jest", "node"],
+    "typeRoots": ["./node_modules/@types", "./"],
+    "baseUrl": ".",
+    "allowJs": true
   },
-  "include": ["./"]
+  "tsc-alias": {
+    "verbose": false,
+    "resolveFullPaths": true,
+    "fileExtensions": {
+      "inputGlob": "{ts,js,mjs}",
+      "outputCheck": ["ts", "js", "json", "mjs"]
+    }
+  }
 }
