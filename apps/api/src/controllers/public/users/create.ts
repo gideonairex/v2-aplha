@@ -1,7 +1,7 @@
 import type { OpenAPIHono } from "@hono/zod-openapi";
 import { createRoute, z } from "@hono/zod-openapi";
 import type { ContentfulStatusCode } from "hono/utils/http-status";
-import { UserSchema } from "prismaZod/index";
+import { UserSchema } from "prismaZod";
 import {
   ErrorCode,
   ErrorStatusCode,
@@ -13,8 +13,7 @@ import { defaultZodResponses } from "src/utils/openApi";
 
 export default function (app: OpenAPIHono) {
   const docs = {
-    description:
-      "Create user.",
+    description: "Create user.",
     request: {
       body: {
         content: {

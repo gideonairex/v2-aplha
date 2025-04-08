@@ -20,7 +20,8 @@
     "baseUrl": ".",
     "allowJs": true,
     "paths": {
-      "prismaZod/*": ["prisma/schema/generated/zod/*"]
+      "src/*": ["src/*"],
+      "prismaZod": ["prisma/schema/generated/zod/index"]
     }
   },
   "tsc-alias": {

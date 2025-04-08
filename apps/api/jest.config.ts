@@ -1,4 +1,5 @@
-import type { JestConfigWithTsJest } from "ts-jest";
+import { type JestConfigWithTsJest, pathsToModuleNameMapper } from "ts-jest";
+import { compilerOptions } from "./tsconfig.json";
 
 const jestConfig: JestConfigWithTsJest = {
   preset: "ts-jest",
@@ -9,9 +10,9 @@ const jestConfig: JestConfigWithTsJest = {
   maxWorkers: 4,
   logHeapUsage: true,
   moduleDirectories: ["node_modules"],
-  moduleNameMapper: {
-    "^src/(.*)$": "<rootDir>/src/$1",
-  },
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
+    prefix: "<rootDir>",
+  }),
   testPathIgnorePatterns: ["dist"],
   coverageDirectory: "<rootDir>/coverage",
   modulePathIgnorePatterns: ["<rootDir>/dist"],
