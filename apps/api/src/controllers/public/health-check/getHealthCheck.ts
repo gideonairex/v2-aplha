@@ -12,7 +12,7 @@ export default function (app: OpenAPIHono) {
       tags: ["System"],
     }),
     (c) => {
-      return c.json({ status: "healthy" });
+      return c.json({ status: "healthy is real" });
     },
   );
 }
