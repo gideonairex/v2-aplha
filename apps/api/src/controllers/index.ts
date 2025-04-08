@@ -1,8 +1,8 @@
 import path from "node:path";
 import type { OpenAPIHono } from "@hono/zod-openapi";
 import type { MiddlewareHandler } from "hono";
-import { honoApp } from "src/libs/hono";
-import registerRoutes from "src/utils/registerRoutes";
+import { honoApp } from "../libs/hono";
+import registerRoutes from "../utils/registerRoutes";
 
 type Route = {
   middlewares: MiddlewareHandler[];
