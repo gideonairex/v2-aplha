@@ -1,6 +1,6 @@
 import type { OpenAPIHono } from "@hono/zod-openapi";
 import { createRoute, z } from "@hono/zod-openapi";
-import { defaultZodResponses } from "src/utils/openApi";
+import { defaultZodResponses } from "../../../utils/openApi";
 
 export default function (app: OpenAPIHono) {
   app.openapi(
