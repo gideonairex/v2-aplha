@@ -11,7 +11,7 @@ type Route = {
 
 const publicRoute = {
   middlewares: [],
-  routes: [{ path: "/healthz", dir: "health-check" }],
+  routes: [{ path: "/healthz", dir: "health-check" }, { path: "/users" }],
 };
 
 const handleRoutes = (appMain: OpenAPIHono, route: Route, pathType: string) => {

@@ -76,6 +76,34 @@ app.doc("/doc", (c) => {
   };
 });
 
+// Docs
+app.doc("/doc", (c) => {
+  const host = c.req.header("host");
+  const isLocal =
+    host?.startsWith("localhost") || host?.startsWith("127.0.0.1");
+  /* istanbul ignore next */
+  const protocol = isLocal ? "http" : "https";
+  return {
+    openapi: "3.0.0",
+    info: {
+      version,
+      title: "Fresh API by Fresh Clinics",
+      description:
+        "The Fresh API provides endpoints for Fresh API ecosystem, RESTful interactions.",
+      contact: {
+        name: "Support Team",
+        email: "support@freshclinics.com",
+        url: "https://freshclinics.com/support",
+      },
+    },
+    servers: [
+      {
+        url: `${protocol}://${host}`,
+        description: "Primary API Server for Fresh",
+      },
+    ],
+  };
+});
 /**
  * Add Swagger UI for local development
  */
