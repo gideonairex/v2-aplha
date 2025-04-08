@@ -18,7 +18,10 @@
     "types": ["jest", "node"],
     "typeRoots": ["./node_modules/@types", "./"],
     "baseUrl": ".",
-    "allowJs": true
+    "allowJs": true,
+    "paths": {
+      "prismaZod/*": ["prisma/schema/generated/zod/*"]
+    }
   },
   "tsc-alias": {
     "verbose": false,
