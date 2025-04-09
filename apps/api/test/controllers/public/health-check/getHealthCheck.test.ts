@@ -9,6 +9,8 @@ describe("Health", () => {
         headers: new Headers({ "Content-Type": "application/json" }),
       });
 
+      const responseData = await res.json();
+      expect(responseData.status).toBe("healthy is real");
       expect(res.status).toBe(200);
     });
   });
