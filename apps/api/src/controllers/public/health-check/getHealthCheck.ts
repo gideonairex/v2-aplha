@@ -7,7 +7,7 @@ export default function (app: OpenAPIHono) {
     createRoute({
       method: "get",
       path: "/",
-      description: "API Health check",
+      description: "Health check",
       responses: { ...defaultZodResponses(z.object({ status: z.string() })) },
       tags: ["System"],
     }),
