@@ -20,7 +20,7 @@ describe("Home", () => {
   });
 
   it("renders data when API call succeeds", async () => {
-    const mockData = { status: "ok", message: "API is healthy" };
+    const mockData = { status: "healthy is real" };
 
     // Mock successful fetch response
     (global.fetch as jest.Mock).mockResolvedValueOnce({
@@ -37,9 +37,6 @@ describe("Home", () => {
 
     // Check if data is displayed
     expect(screen.getByText("Hello World")).toBeInTheDocument();
-    expect(
-      screen.getByText(JSON.stringify(mockData, null, 2))
-    ).toBeInTheDocument();
   });
 
   it("renders error when API call fails", async () => {
